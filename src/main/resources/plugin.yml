@@ -1,0 +1,9 @@
+name: LibTdi
+version: '${project.version}'
+main: world.ntdi.libtdi.LibTdi
+api-version: 1.19
+prefix: LT
+load: STARTUP
+authors: [ Ntdi ]
+description: A Library for Guis and Items
+website: ntdi.world
