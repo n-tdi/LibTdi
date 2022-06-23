@@ -93,6 +93,35 @@ public class ItemUtils {
         return item;
     }
 
+    public static ItemStack addLore(ItemStack item, String line, int pos) {
+        ItemMeta meta = item.getItemMeta();
+        List<String> lore = new ArrayList<>(meta.getLore());
+        lore.set(pos, line);
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        return item;
+    }
+
+    public static ItemStack removeLore(ItemStack item, String line) {
+        ItemMeta meta = item.getItemMeta();
+        List<String> lore = new ArrayList<>(meta.getLore());
+        if(!lore.contains(line))return item;
+        lore.remove(line);
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        return item;
+    }
+
+    public static ItemStack removeLore(ItemStack item, int index) {
+        ItemMeta meta = item.getItemMeta();
+        List<String> lore = new ArrayList<>(meta.getLore());
+        if(index<0||index>lore.size())return item;
+        lore.remove(index);
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        return item;
+    }
+
     public static ItemStack setLore(ItemStack item, String... lore) {
         return setLore(item, Arrays.asList(lore));
     }

@@ -75,38 +75,19 @@ public class ItemBuilder {
         return this;
     }
     public ItemBuilder removeLoreLine(String line){
-        ItemMeta im = is.getItemMeta();
-        List<String> lore = new ArrayList<>(im.getLore());
-        if(!lore.contains(line))return this;
-        lore.remove(line);
-        im.setLore(lore);
-        is.setItemMeta(im);
+        ItemUtils.removeLore(is, line);
         return this;
     }
     public ItemBuilder removeLoreLine(int index){
-        ItemMeta im = is.getItemMeta();
-        List<String> lore = new ArrayList<>(im.getLore());
-        if(index<0||index>lore.size())return this;
-        lore.remove(index);
-        im.setLore(lore);
-        is.setItemMeta(im);
+        ItemUtils.removeLore(is, index);
         return this;
     }
     public ItemBuilder addLoreLine(String line){
-        ItemMeta im = is.getItemMeta();
-        List<String> lore = new ArrayList<>();
-        if(im.hasLore())lore = new ArrayList<>(im.getLore());
-        lore.add(line);
-        im.setLore(lore);
-        is.setItemMeta(im);
+        ItemUtils.addLore(is, line);
         return this;
     }
     public ItemBuilder addLoreLine(String line, int pos){
-        ItemMeta im = is.getItemMeta();
-        List<String> lore = new ArrayList<>(im.getLore());
-        lore.set(pos, line);
-        im.setLore(lore);
-        is.setItemMeta(im);
+        ItemUtils.addLore(is, line, pos);
         return this;
     }
     @SuppressWarnings("deprecation")
