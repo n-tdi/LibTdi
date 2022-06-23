@@ -2,7 +2,7 @@
  Another spigot library
  
  ## Usage
- // coming soon
+ `// coming soon`
  
  ## Examples
  Epik gui system and item utilitys + json + nms + [redlib love](https://github.com/Redempt/RedLib)
